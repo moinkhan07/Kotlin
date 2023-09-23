@@ -3,4 +3,5 @@ fun main(){
     var b:Int = 20
     var c:Int = a + b
     println(c)
+    println("The sum of $a + $b = $c")
 }
