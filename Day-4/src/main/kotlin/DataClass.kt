@@ -8,24 +8,33 @@ fun main(){
 }
 
 //                                           Data class :
-class User(var firstName:String,var lastName:String,var age:Int){
+//===================================================================================================
+
+data class User(var firstName:String,var lastName:String,var age:Int)
+
+// All the below function/methods can be automatically made by using ""data"" keyword
+// just before the class name, we will get the same output without implementation of the
+// methods (equals, hashcode, tostring)
+
+
+//class User(var firstName:String,var lastName:String,var age:Int){
 
 // If overriding equals method than it is mandatory to also override the hascode method(In Collection)
-    override fun equals(other: Any?): Boolean {
-        if(this === other){
-            return true
-        }
-        if(other is User){
-            return this.firstName == other.firstName && this.lastName == other.lastName && this.age == other.age
-        }
-        return false
-    }
-
-    override fun hashCode(): Int {
-        return 0
-    }
-
-    override fun toString(): String {
-        return "User(firstName: $firstName , lastName: $lastName , age: $age)"
-    }
-}
+//    override fun equals(other: Any?): Boolean {
+//        if(this === other){
+//            return true
+//        }
+//        if(other is User){
+//            return this.firstName == other.firstName && this.lastName == other.lastName && this.age == other.age
+//        }
+//        return false
+//    }
+//
+//    override fun hashCode(): Int {
+//        return 0
+//    }
+//
+//    override fun toString(): String {
+//        return "User(firstName: $firstName , lastName: $lastName , age: $age)"
+//    }
+//}
