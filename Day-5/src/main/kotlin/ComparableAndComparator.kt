@@ -10,8 +10,11 @@ fun main() {
     laptops.sortedWith(compareBy({it.price})).forEach({ println(it) }) // Easy way to sort without writing full implementation of comparator
     println("=========================================================")
     laptops.sortedWith(compareBy({it.ram})).forEach({ println(it) })
+    laptops.sortedWith(compareBy<Laptop>{it.ram}.thenBy { it.price }).forEach({ println(it) }) // When we have to use 2 condition
     println("=========================================================")
-    laptops.sortedWith(compareBy({it.brand})).forEach({ println(it) })
+    laptops.sortedBy { it.brand }.forEach({ println(it) }) // more shorted and easy way
+
+
 
 //    println("===============================")
 //    laptops.sorted().forEach({ println(it) })
